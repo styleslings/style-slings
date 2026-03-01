@@ -15,25 +15,59 @@ import "swiper/css/pagination";
 export default function HeroSection() {
   const slides = useMemo(
     () => [
+      { src: "/images/home-page-banner-image.jpg", alt: "Premium handbags collection" },
+      { src: "/images/three-bags.jpg", alt: "New arrivals handbags" },
+      { src: "/images/clutch-bags.jpg", alt: "Elegant women bags" },
+      { src: "/hero/4.jpg", alt: "Luxury handbags sale" },
+      { src: "/hero/5.jpg", alt: "Best handbags in Pakistan" },
+    ],
+    []
+  );
+
+  const products = useMemo(
+    () => [
       {
-        src: "/hero/1.jpg",
-        alt: "Premium handbags collection",
+        id: 1,
+        title: "Black Tote Bag",
+        image: "/images/black-tote-bag.png",
+        hoverImage: "/images/2.png",
+        price: "1,899",
+        oldPrice: "3,000",
+        badge: "Sale",
+        rating: 4,
+        reviews: 120,
       },
       {
-        src: "/hero/2.jpg",
-        alt: "New arrivals handbags",
+        id: 2,
+        title: "Modern Shoulder Bag",
+        image: "/images/hijab-bag.png",
+        hoverImage: "/images/model-hijab.png",
+        price: "2,199",
+        rating: 5,
+        reviews: 85,
+        badge: "Sale",
       },
       {
-        src: "/hero/3.jpg",
-        alt: "Elegant women bags",
+        id: 3,
+        title: "Camel Brown Floral Bag",
+        image: "/images/zinc-bag.png",
+        hoverImage: "/images/zinc-model-bag.png",
+        price: "2,499",
+        rating: 4,
+        reviews: 97,
+        badge: "Sale",
       },
       {
-        src: "/hero/4.jpg",
-        alt: "Luxury handbags sale",
-      },
-      {
-        src: "/hero/5.jpg",
-        alt: "Best handbags in Pakistan",
+        id: 4,
+        title: "Luxury Clutch Bag",
+        image: "/images/beige-bag-classy.png",
+        hoverImage: "/images/beige-handbag.png",
+        price: "1,299",
+        oldPrice: "1,999",
+        badge: "Hot",
+        rating: 5,
+        reviews: 150,
+        badge: "Sale",
       },
     ],
     []
@@ -41,7 +75,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full">
-      {/* HERO SLIDER */}
+      {/* ================= HERO SECTION ================= */}
       <div className="relative w-full h-[68vh] sm:h-[72vh] lg:h-[78vh] overflow-hidden">
         <Swiper
           modules={[Autoplay, EffectFade, Pagination]}
@@ -49,16 +83,12 @@ export default function HeroSection() {
           fadeEffect={{ crossFade: true }}
           loop
           speed={900}
-          autoplay={{
-            delay: 3200,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 3200, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           className="h-full w-full"
         >
           {slides.map((s, i) => (
             <SwiperSlide key={i} className="relative h-full w-full">
-              {/* Background image */}
               <Image
                 src={s.src}
                 alt={s.alt}
@@ -67,35 +97,23 @@ export default function HeroSection() {
                 sizes="100vw"
                 className="object-cover"
               />
-
-              {/* Subtle overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
-
-              {/* Modern soft vignette */}
               <div className="absolute inset-0 pointer-events-none [box-shadow:inset_0_0_120px_rgba(0,0,0,0.35)]" />
-
-              {/* Ken Burns style zoom (smooth) */}
-              <div className="absolute inset-0 animate-[heroZoom_6s_ease-in-out_infinite]" />
-
-              {/* Keyframes inline via tailwind arbitrary animation needs global keyframes;
-                  We'll add them below in globals.css snippet. */}
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* CONTENT */}
+        {/* HERO CONTENT */}
         <div className="absolute inset-0 z-10">
           <div className="mx-auto max-w-7xl h-full px-4">
             <div className="h-full flex items-center">
               <div className="max-w-xl">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-white backdrop-blur border border-white/20">
+                <div className="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-white backdrop-blur border border-white/20">
                   <span className="text-xs sm:text-sm font-semibold tracking-wide">
                     Ramadan Sale • Up to 50% Off
                   </span>
                 </div>
 
-                {/* SEO H1 */}
                 <h1 className="mt-4 text-white font-extrabold leading-tight text-3xl sm:text-4xl lg:text-5xl">
                   Premium Handbags in Pakistan — Modern Styles, Everyday Luxury
                 </h1>
@@ -105,7 +123,6 @@ export default function HeroSection() {
                   Fast delivery, easy returns, and quality you can feel.
                 </p>
 
-                {/* CTAs */}
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Link
                     href="/bags"
@@ -122,7 +139,6 @@ export default function HeroSection() {
                   </Link>
                 </div>
 
-                {/* Small trust line */}
                 <div className="mt-5 text-sm text-white/80">
                   ✔ New arrivals weekly • ✔ Secure checkout • ✔ Premium quality
                 </div>
@@ -131,8 +147,97 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Optional: bottom fade into next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      </div>
+
+      {/* ================= PRODUCT SECTION ================= */}
+      <div className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-10">
+            Featured Products
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition duration-300"
+              >
+                <div className="relative w-full aspect-square overflow-hidden">
+                  {product.badge && (
+                    <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded z-20">
+                      {product.badge}
+                    </span>
+                  )}
+
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover object-center transition-opacity duration-500 group-hover:opacity-0"
+                  />
+
+                  {product.hoverImage && (
+                    <Image
+                      src={product.hoverImage}
+                      alt={`${product.title} hover`}
+                      fill
+                      className="object-cover object-center opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                  )}
+                </div>
+
+                <div className="p-4">
+                  <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
+                    {product.title}
+                  </h3>
+
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="text-lg font-semibold text-gray-900">
+                      PKR {product.price}
+                    </span>
+                    {product.oldPrice && (
+                      <span className="text-sm text-gray-400 line-through">
+                        PKR {product.oldPrice}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* ⭐ REVIEW STARS */}
+                  <div className="mt-1 flex items-center">
+                    {[...Array(5)].map((_, idx) => (
+                      <svg
+                        key={idx}
+                        className={`h-4 w-4 ${
+                          idx < product.rating ? "text-yellow-400" : "text-gray-300"
+                        }`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.96a1 1 0 00.95.69h4.164c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.96c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.286-3.96a1 1 0 00-.364-1.118L2.044 9.387c-.784-.57-.38-1.81.588-1.81h4.164a1 1 0 00.951-.69l1.286-3.96z" />
+                      </svg>
+                    ))}
+                    <span className="ml-2 text-sm text-gray-500">({product.reviews})</span>
+                  </div>
+
+                  <button className="mt-4 w-full bg-[#9B6500] text-white py-2 rounded-md text-sm font-semibold hover:bg-gray-900 transition">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* 🔥 VIEW ALL PRODUCTS BUTTON */}
+          <div className="mt-12 flex justify-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center bg-[#9B6500] justify-center px-8 py-3 rounded-md border  text-white font-semibold hover:bg-black hover:text-white transition duration-300"
+            >
+              View All Products
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

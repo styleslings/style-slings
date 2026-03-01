@@ -22,42 +22,42 @@ export default function Reviews() {
   const reviews = useMemo(
     () => [
       {
-        name: "Anonymous",
+        name: "nabeeha",
         rating: 4,
-        title: "Good",
-        text: "",
-        image: "/reviews/bag-1.jpg",
+        title: "",
+        text: "Absolutely love this bag! So stylish, sturdy, and perfect for everyday use!",
+        image: "/images/zinc-bag.png",
       },
       {
-        name: "IQBAL BANO",
+        name: "Mahnoor Ali",
         rating: 5,
         title: "",
-        text: "Very useful for me. I love A. Store bags a lot.",
-        image: "/reviews/bag-2.jpg",
+        text: "Premium quality and elegant design, I get compliments everywhere I go.",
+        image: "/images/brown-floral-bag.png",
       },
       {
-        name: "Anonymous",
+        name: "Fizza Tariq",
         rating: 5,
         title: "",
         text: "Loved the bag, stuff, space, everything is too good..it has enough space for my abaya even. 👍",
-        image: "/reviews/bag-3.jpg",
+        image: "/images/black-tote-bag.png",
       },
       {
-        name: "HINA",
+        name: "Hadia",
         rating: 5,
         title: "",
         text: "Quality is amazing and the finishing is premium. Loved it!",
-        image: "/reviews/bag-4.jpg",
+        image: "/images/hijab-bag.png",
       },
       {
-        name: "Anonymous",
+        name: "zara khan",
         rating: 5,
-        title: "Excellent",
-        text: "",
-        image: "/reviews/bag-5.jpg",
+        title: "",
+        text: "Fast delivery, excellent craftsmanship, and worth every penny.",
+        image: "/images/beige-bag-classy.png",
       },
     ],
-    []
+  
   );
 
   return (
