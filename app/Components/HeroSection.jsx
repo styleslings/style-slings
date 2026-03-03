@@ -15,11 +15,11 @@ import "swiper/css/pagination";
 export default function HeroSection() {
   const slides = useMemo(
     () => [
-      { src: "/images/home-page-banner-image.jpg", alt: "Premium handbags collection" },
-      { src: "/images/three-bags.jpg", alt: "New arrivals handbags" },
-      { src: "/images/clutch-bags.jpg", alt: "Elegant women bags" },
-      { src: "/hero/4.jpg", alt: "Luxury handbags sale" },
-      { src: "/hero/5.jpg", alt: "Best handbags in Pakistan" },
+      { src: "/images/handbags-shoot.webp", alt: "Premium handbags collection" },
+      { src: "/images/handbag-bnner.avif", alt: "New arrivals handbags" },
+      { src: "/images/hanged-bag.avif", alt: "Elegant women bags" },
+      { src: "/images/handbag-image.avif", alt: "Luxury handbags sale" },
+      { src: "/images/home-page-banner-image.jpg", alt: "Best handbags in Pakistan" },
     ],
     []
   );
@@ -115,7 +115,7 @@ export default function HeroSection() {
                 </div>
 
                 <h1 className="mt-4 text-white font-extrabold leading-tight text-3xl sm:text-4xl lg:text-5xl">
-                  Premium Handbags in Pakistan — Modern Styles, Everyday Luxury
+                  Premium Handbags in Pakistan 
                 </h1>
 
                 <p className="mt-4 text-white/90 text-base sm:text-lg leading-relaxed">
@@ -202,15 +202,15 @@ export default function HeroSection() {
                       </span>
                     )}
                   </div>
+                  
 
                   {/* ⭐ REVIEW STARS */}
                   <div className="mt-1 flex items-center">
                     {[...Array(5)].map((_, idx) => (
                       <svg
                         key={idx}
-                        className={`h-4 w-4 ${
-                          idx < product.rating ? "text-yellow-400" : "text-gray-300"
-                        }`}
+                        className={`h-4 w-4 ${idx < product.rating ? "text-yellow-400" : "text-gray-300"
+                          }`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -227,18 +227,83 @@ export default function HeroSection() {
               </div>
             ))}
           </div>
-
+          
           {/* 🔥 VIEW ALL PRODUCTS BUTTON */}
           <div className="mt-12 flex justify-center">
             <Link
               href="/products"
-              className="inline-flex items-center bg-[#9B6500] justify-center px-8 py-3 rounded-md border  text-white font-semibold hover:bg-black hover:text-white transition duration-300"
+              className="inline-flex items-center bg-[#9B6500] justify-center px-8 py-3 rounded-md border mb-12 text-white font-semibold hover:bg-black hover:text-white transition duration-300"
             >
               View All Products
             </Link>
           </div>
+{/* ================= COLORS OF THE SEASON SECTION ================= */}
+          <section className="w-full bg-[#e9e5df]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+
+              {/* LEFT IMAGE */}
+              <div className="relative w-full h-[400px] lg:h-auto">
+                <Image
+                  src="/images/zinc-model-bag.png"  // <-- change to your image path
+                  alt="Colors of the Season"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+
+              {/* RIGHT CONTENT */}
+              <div className="flex items-center justify-center px-6 sm:px-12 lg:px-20 py-14 text-center lg:text-left">
+                <div className="max-w-xl">
+
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-600">
+                    Colors of the Season
+                  </h2>
+
+                  <p className="mt-6 text-gray-500 leading-relaxed text-base sm:text-lg">
+                    Our SS24 Collection is brimming with a soft colour palette of Sea Green,
+                    Melon and Whites to take us out of the gloom and into the bloom of
+                    Spring and beyond.
+                  </p>
+
+                  <div className="mt-10">
+                    <Link
+                      href="/bags"
+                      className="inline-block border border-gray-500 text-gray-600 px-10 py-3 text-sm font-medium hover:bg-black hover:text-white transition duration-300"
+                    >
+                      Shop Now
+                    </Link>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </section>
         </div>
+        {/* ================= BANNER IMAGE ================= */}
+        
+        
+        <div className="relative my-16 w-full h-[400px] md:h-[500px] lg:h-[550px]">
+          <Image
+            src="/images/clutch-bags.jpg" // <-- your banner image path
+            alt="Shop Banner"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Link
+              href="/bags"
+             className="inline-block border border-gray-500 text-white-600 px-10 py-3 text-white text-sm font-medium hover:bg-black hover:text-white transition duration-300"
+            >
+              Shop Now
+            </Link>
+          </div>
+        </div>
+        
       </div>
+      
     </section>
+    
   );
 }

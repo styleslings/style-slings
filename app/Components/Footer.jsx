@@ -4,137 +4,173 @@ import Link from "next/link";
 import { useMemo } from "react";
 import {
   FaFacebookF,
-  FaXTwitter,
   FaInstagram,
-  FaLinkedinIn,
   FaYoutube,
-  FaWhatsapp,
-} from "react-icons/fa6";
-import { FaTelegramPlane } from "react-icons/fa";
+  FaPinterestP,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiOutlineMail } from "react-icons/hi";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  const leftLinks = useMemo(
+  const informationLinks = useMemo(
     () => [
-      { label: "All Bags", href: "/bags" },
-      { label: "Shoulder Bags", href: "/bags/shoulder" },
-      { label: "Tote Bags", href: "/bags/tote" },
-      { label: "Crossbody Bag", href: "/bags/crossbody" },
-      { label: "Laptop Bags", href: "/bags/laptop" },
-      { label: "Cosmetic Bags", href: "/bags/cosmetic" },
+      { label: "Online Order Tracking", href: "#" },
+      { label: "Size Chart", href: "#" },
+      { label: "Shipping Policy", href: "#" },
+      { label: "Returns & Exchange Policy", href: "#" },
+      { label: "Discount Policy", href: "#" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Sustainability", href: "#" },
+      { label: "FAQs", href: "#" },
     ],
     []
   );
 
-  const rightLinks = useMemo(
+  const aboutLinks = useMemo(
     () => [
-      { label: "About us", href: "/about" },
-      { label: "Blogs", href: "/blogs" },
-      { label: "Bulk Orders", href: "/bulk-orders" },
-      { label: "Contact", href: "/contact" },
-      { label: "Faqs", href: "/faqs" },
-      { label: "Return & Refund Policy", href: "/return-refund" },
+      { label: "Our Story", href: "#" },
+      { label: "Career@Stylo", href: "#" },
+      { label: "Contact Us", href: "#" },
+      { label: "Blogs", href: "#" },
+      { label: "Download Our App", href: "#" },
+      { label: "Terms of Service", href: "#" },
+      { label: "Store Locations", href: "#" },
+      { label: "Join Franchise Program", href: "#" },
     ],
     []
   );
 
-  const socials = useMemo(
+  const exploreLinks = useMemo(
     () => [
-      { icon: <FaFacebookF />, href: "#", label: "Facebook" },
-      { icon: <FaXTwitter />, href: "#", label: "X" },
-      { icon: <FaInstagram />, href: "#", label: "Instagram" },
-      { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
-      { icon: <FaYoutube />, href: "#", label: "YouTube" },
-      { icon: <FaTelegramPlane />, href: "#", label: "Telegram" },
-      { icon: <FaWhatsapp />, href: "#", label: "WhatsApp" },
+      { label: "New In", href: "#" },
+      { label: "Women Shoes", href: "#" },
+      { label: "Bags", href: "#" },
+      { label: "Kids", href: "#" },
+      { label: "Accessories", href: "#" },
+      { label: "Sale", href: "#" },
+      { label: "Stylo WhatsApp Channel", href: "#" },
     ],
     []
   );
 
   return (
-    <footer className="w-full">
-      {/* TOP (dark section) */}
-      <div className="bg-[#3b3b3b] text-white">
-        <div className="mx-auto max-w-7xl px-4 py-14">
-          {/* Header row */}
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <h3 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-              GET IN TOUCH
-            </h3>
+    <footer className="bg-[#f3f3f3] text-neutral-800">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* 5 Columns Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-16 text-lg text-white/90">
-              <a
-                href="mailto:sales@styleslings.com"
-                className="hover:text-white transition"
-              >
-                sales@styleslings.com
-              </a>
-              <a href="tel:03301140085" className="hover:text-white transition">
-                +92 000 000 0000
-              </a>
+          {/* Column 1 - Get In Touch */}
+          <div>
+            <h4 className="uppercase tracking-[4px] text-sm mb-6">
+              Get In Touch
+            </h4>
+
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="font-semibold">Phone:</p>
+                <p>+92-42-111-178-956</p>
+              </div>
+
+              <div>
+                <p className="font-semibold">Email:</p>
+                <p>care@stylo.pk</p>
+              </div>
+
+              <div>
+                <p className="font-semibold">Customer Care Timings:</p>
+                <p>
+                  Monday to Saturday, 09:00 AM to 09:00 PM
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Links grid */}
-          <div className="mt-14 grid gap-14 md:grid-cols-2">
-            <ul className="space-y-6 text-xl text-white/85">
-              {leftLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="hover:text-white transition">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <ul className="space-y-6 text-xl text-white/85 md:justify-self-center">
-              {rightLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="hover:text-white transition">
-                    {l.label}
+          {/* Column 2 - Information */}
+          <div>
+            <h4 className="uppercase tracking-[4px] text-sm mb-6">
+              Information
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {informationLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="hover:underline">
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
-      </div>
 
-      {/* BOTTOM (light strip with terms + socials on same row) */}
-      <div className="bg-white text-neutral-700">
-        <div className="mx-auto max-w-7xl px-4 py-10">
-          <div className="grid gap-6 md:grid-cols-3 md:items-center">
-            <p className="text-lg">
-              © {year} styleslings.com
+          {/* Column 3 - About */}
+          <div>
+            <h4 className="uppercase tracking-[4px] text-sm mb-6">
+              About
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {aboutLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="hover:underline">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 - Explore */}
+          <div>
+            <h4 className="uppercase tracking-[4px] text-sm mb-6">
+              Explore
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {exploreLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="hover:underline">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5 - Newsletter */}
+          <div>
+            <h4 className="uppercase tracking-[4px] text-sm mb-6">
+              Sign Up And Save
+            </h4>
+
+            <p className="text-sm mb-6">
+              Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
             </p>
 
-            {/* Terms in center */}
-            <div className="md:text-center">
-              <Link
-                href="/terms"
-                className="text-lg hover:text-neutral-900 transition"
-              >
-                Terms and Policies
-              </Link>
+            {/* Underline Input */}
+            <div className="flex items-center border-b border-neutral-600 pb-2 mb-6">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-transparent outline-none text-sm w-full placeholder:text-neutral-500"
+              />
+              <HiOutlineMail className="text-xl" />
             </div>
 
-            {/* Social icons on right (next to Terms row) */}
-            <div className="flex items-center gap-5 md:justify-end">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-neutral-900/80 hover:text-neutral-900 transition text-xl"
-                >
-                  {s.icon}
-                </a>
-              ))}
+            {/* Social Icons */}
+            <div className="flex items-center gap-5 text-xl">
+              <FaInstagram className="cursor-pointer hover:opacity-70" />
+              <FaFacebookF className="cursor-pointer hover:opacity-70" />
+              <FaYoutube className="cursor-pointer hover:opacity-70" />
+              <FaXTwitter className="cursor-pointer hover:opacity-70" />
+              <FaPinterestP className="cursor-pointer hover:opacity-70" />
+              <FaLinkedinIn className="cursor-pointer hover:opacity-70" />
             </div>
           </div>
+        </div>
+
+        {/* Bottom Copyright */}
+        <div className="text-center text-sm mt-16">
+          © {year} Stylo | All Rights Reserved
         </div>
       </div>
     </footer>
