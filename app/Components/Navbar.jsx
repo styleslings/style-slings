@@ -65,8 +65,8 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "New arrivals", href: "/new-arrivals" },
-    { label: "Bags", href: "/bags" },
-    { label: "Contact us", href: "/contact" },
+    { label: "Bags", href: "/products" },
+    { label: "Contact us", href: "/contact-us" },
     { label: "Blogs", href: "/blogs" },
   ];
 
@@ -152,7 +152,7 @@ export default function Navbar() {
             {/* CENTER LOGO */}
             <Link href="/" className="flex items-center justify-center">
               <Image
-                src="/logo.png" // put your logo in /public/logo.png
+                src="/images/logo-ss.png" // put your logo in /public/logo.png
                 alt="Logo"
                 width={120}
                 height={40}

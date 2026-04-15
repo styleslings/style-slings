@@ -76,7 +76,7 @@ export default function Footer() {
 
               <div>
                 <p className="font-semibold">Email:</p>
-                <p>care@stylo.pk</p>
+                <p>care@styleslings.com</p>
               </div>
 
               <div>
