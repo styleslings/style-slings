@@ -35,7 +35,7 @@ const contactDetails = [
   {
     icon: Clock3,
     title: "Customer Care Hours",
-    text: "Monday to Saturday\n10:00 AM – 8:00 PM",
+    text: "Monday to Saturday\n9:00 AM – 9:00 PM",
   },
   {
     icon: MapPin,
@@ -279,6 +279,59 @@ function WhatsAppBanner() {
   );
 }
 
+/* ===================== FAQ SECTION ADDED ===================== */
+
+const faqItems = [
+  {
+    q: "How long does delivery take?",
+    a: "Delivery usually takes 3–5 working days across Pakistan. Remote areas may take slightly longer.",
+  },
+  {
+    q: "Do you offer Cash on Delivery?",
+    a: "Yes, we offer Cash on Delivery (COD) all over Pakistan.",
+  },
+  {
+    q: "Can I return or exchange my order?",
+    a: "Yes, returns and exchanges are accepted within 3 days if the product is unused and in original condition.",
+  },
+  {
+    q: "How can I track my order?",
+    a: "You will receive a tracking number via SMS or email once your order is shipped.",
+  },
+];
+
+function FAQCard({ q, a }) {
+  return (
+    <div className="rounded-[24px] bg-white p-5 shadow-sm transition hover:shadow-md sm:p-6">
+      <h3 className="font-serif text-xl text-zinc-800">{q}</h3>
+      <p className="mt-3 text-sm leading-7 text-zinc-600">{a}</p>
+    </div>
+  );
+}
+
+function FAQSection() {
+  return (
+    <section className="mt-16">
+      <div className="text-center">
+        <h2 className="font-serif text-3xl text-zinc-800 sm:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-zinc-600 sm:text-base">
+          Quick answers to common customer questions.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-5 md:grid-cols-2">
+        {faqItems.map((item, index) => (
+          <FAQCard key={index} {...item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ===================== MAIN COMPONENT ===================== */
+
 export default function ContactSection() {
   return (
     <section className="relative overflow-hidden bg-[#fbf8f7] py-16 sm:py-20 lg:py-24">
@@ -297,6 +350,7 @@ export default function ContactSection() {
 
         <QuickHelpSection />
         <WhatsAppBanner />
+        <FAQSection />
       </div>
     </section>
   );

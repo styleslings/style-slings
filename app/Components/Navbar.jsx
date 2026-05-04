@@ -17,8 +17,6 @@ import {
   FaFacebookF,
   FaInstagram,
   FaTiktok,
-  FaYoutube,
-  FaPinterestP,
   FaWhatsapp,
 } from "react-icons/fa";
 
@@ -64,18 +62,15 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "New arrivals", href: "/new-arrivals" },
     { label: "Bags", href: "/products" },
     { label: "Contact us", href: "/contact-us" },
     { label: "Blogs", href: "/blogs" },
   ];
 
   const socialItems = [
-    { icon: <FaFacebookF />, href: "https://facebook.com", label: "Facebook" },
-    { icon: <FaInstagram />, href: "https://instagram.com", label: "Instagram" },
-    { icon: <FaTiktok />, href: "https://tiktok.com", label: "TikTok" },
-    { icon: <FaYoutube />, href: "https://youtube.com", label: "YouTube" },
-    { icon: <FaPinterestP />, href: "https://pinterest.com", label: "Pinterest" },
+    { icon: <FaFacebookF />, href: "https://www.facebook.com/923698307503097", label: "Facebook" },
+    { icon: <FaInstagram />, href: "https://www.instagram.com/styleslingss", label: "Instagram" },
+    { icon: <FaTiktok />, href: "https://www.tiktok.com/@styleslings", label: "TikTok" },
     { icon: <FaWhatsapp />, href: "https://wa.me/", label: "WhatsApp" },
   ];
 

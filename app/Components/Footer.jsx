@@ -5,9 +5,7 @@ import { useMemo } from "react";
 import {
   FaFacebookF,
   FaInstagram,
-  FaYoutube,
-  FaPinterestP,
-  FaLinkedinIn,
+  FaTiktok,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
@@ -17,13 +15,10 @@ export default function Footer() {
 
   const informationLinks = useMemo(
     () => [
-      { label: "Online Order Tracking", href: "#" },
-      { label: "Size Chart", href: "#" },
+      
       { label: "Shipping Policy", href: "#" },
       { label: "Returns & Exchange Policy", href: "#" },
-      { label: "Discount Policy", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Sustainability", href: "#" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "FAQs", href: "#" },
     ],
     []
@@ -31,30 +26,14 @@ export default function Footer() {
 
   const aboutLinks = useMemo(
     () => [
-      { label: "Our Story", href: "#" },
-      { label: "Career@Stylo", href: "#" },
-      { label: "Contact Us", href: "#" },
-      { label: "Blogs", href: "#" },
-      { label: "Download Our App", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Store Locations", href: "#" },
-      { label: "Join Franchise Program", href: "#" },
+      { label: "Our Story", href: "about-us" },
+      { label: "Contact Us", href: "contact-us" },
+      { label: "Blogs", href: "blogs" },
     ],
     []
   );
 
-  const exploreLinks = useMemo(
-    () => [
-      { label: "New In", href: "#" },
-      { label: "Women Shoes", href: "#" },
-      { label: "Bags", href: "#" },
-      { label: "Kids", href: "#" },
-      { label: "Accessories", href: "#" },
-      { label: "Sale", href: "#" },
-      { label: "Stylo WhatsApp Channel", href: "#" },
-    ],
-    []
-  );
+ 
 
   return (
     <footer className="bg-[#f3f3f3] text-neutral-800">
@@ -76,7 +55,7 @@ export default function Footer() {
 
               <div>
                 <p className="font-semibold">Email:</p>
-                <p>care@styleslings.com</p>
+                <p>styleslingss@gmail.com</p>
               </div>
 
               <div>
@@ -120,30 +99,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4 - Explore */}
-          <div>
-            <h4 className="uppercase tracking-[4px] text-sm mb-6">
-              Explore
-            </h4>
-            <ul className="space-y-3 text-sm">
-              {exploreLinks.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className="hover:underline">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        
 
           {/* Column 5 - Newsletter */}
           <div>
             <h4 className="uppercase tracking-[4px] text-sm mb-6">
-              Sign Up And Save
+             Get 10% off your first order
             </h4>
 
             <p className="text-sm mb-6">
-              Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+             Enjoy a special welcome offer on your first purchase. Limited time only.
             </p>
 
             {/* Underline Input */}
@@ -157,20 +122,26 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-5 text-xl">
-              <FaInstagram className="cursor-pointer hover:opacity-70" />
-              <FaFacebookF className="cursor-pointer hover:opacity-70" />
-              <FaYoutube className="cursor-pointer hover:opacity-70" />
-              <FaXTwitter className="cursor-pointer hover:opacity-70" />
-              <FaPinterestP className="cursor-pointer hover:opacity-70" />
-              <FaLinkedinIn className="cursor-pointer hover:opacity-70" />
-            </div>
+           <div className="flex items-center gap-5 text-xl">
+  
+  <a href="https://www.instagram.com/styleslingss/" target="_blank" rel="noopener noreferrer">
+    <FaInstagram className="cursor-pointer hover:opacity-70" />
+  </a>
+
+  <a href="https://www.facebook.com/923698307503097" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF className="cursor-pointer hover:opacity-70" />
+  </a>
+<a href="https://www.tiktok.com/@styleslings" target="_blank" rel="noopener noreferrer">
+    <FaTiktok className="cursor-pointer hover:opacity-70" />
+  </a>
+
+</div>
           </div>
         </div>
 
         {/* Bottom Copyright */}
         <div className="text-center text-sm mt-16">
-          © {year} Stylo | All Rights Reserved
+          © {year} StyleSlings | All Rights Reserved
         </div>
       </div>
     </footer>
